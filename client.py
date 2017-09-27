@@ -39,9 +39,20 @@ class Player:
                         break
                     elif ans == 'c':
                         self.send('call')
+                        if self.coins <= r:
+                            self.coins = 0
+                        #else
                         break
                     elif ans == 'r':
                         self.send('rise')
+                        r = int(input('На сколько надо повысить?'))
+                        if r % 100 != '00':
+                            r = int(input('Вы ввели не корректное число, оно доджнго быть кратно 100. Введите его заново'))
+                        elif r % 100 == '00':
+                            if self.coins < r:
+                                self.coins = 0
+                            else:
+                                self.coins -= r
                         break
                     else:
                         print('я вас не понимаю')
