@@ -79,3 +79,5 @@ class Player:
             exit(0)
 
 player = Player()
+
+#thinkaboutit
