@@ -41,7 +41,10 @@ class Player:
                         self.send('call')
                         if self.coins <= r:
                             self.coins = 0
-                        #else
+                            #Добавить общение с сервером
+                        else:
+                            self.coins -= r
+                            #Добавить общение с сервером
                         break
                     elif ans == 'r':
                         self.send('rise')
@@ -51,8 +54,10 @@ class Player:
                         elif r % 100 == '00':
                             if self.coins < r:
                                 self.coins = 0
+                                #Добавить общение с сервером
                             else:
                                 self.coins -= r
+                                #Добавить общение с сервером
                         break
                     else:
                         print('я вас не понимаю')
